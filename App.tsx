@@ -210,7 +210,8 @@ function AppContent() {
 
       {previewImage && (
         <PreviewModal 
-          imageUrl={previewImage.compressedUrl || previewImage.originalPreviewUrl}
+          originalUrl={previewImage.originalPreviewUrl}
+          compressedUrl={previewImage.compressedUrl}
           title={previewImage.originalFile.name}
           onClose={() => setPreviewImage(null)}
         />
