@@ -560,7 +560,10 @@ ecocompress/
 
 **如果這個專案對您有幫助，請給個 ⭐ Star！**
 
-Made with ❤️ by EcoCompress Contributors<br>
-wangruofeng
+Made with ❤️ by EcoCompress Contributors
+
+<a href="https://github.com/wangruofeng/ecocompress/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wangruofeng/ecocompress" alt="Contributors" />
+</a>
 
 </div>
