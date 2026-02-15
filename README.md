@@ -9,7 +9,7 @@
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**🌐 [在线演示](https://wangruofeng.github.io/img_compress/) | [GitHub 仓库](https://github.com/wangruofeng/img_compress)**
+**🌐 [在线演示](https://wangruofeng.github.io/img-compress/) | [GitHub 仓库](https://github.com/wangruofeng/img-compress)**
 
 **Language / 语言 / 語言**: [English](#english) | [简体中文](#简体中文) | [繁體中文](#繁體中文)
 
@@ -59,8 +59,8 @@
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/wangruofeng/img_compress.git
-   cd img_compress
+   git clone https://github.com/wangruofeng/img-compress.git
+   cd img-compress
    ```
 
 2. **安装依赖**
@@ -120,7 +120,7 @@
 ### 📁 项目结构
 
 ```
-img_compress/
+img-compress/
 ├── components/          # React 组件
 │   ├── Dropzone.tsx    # 文件上传组件
 │   ├── Header.tsx      # 页面头部
@@ -191,8 +191,8 @@ img_compress/
 
 如有问题或建议，请通过以下方式联系：
 
-- 📮 提交 [Issue](https://github.com/wangruofeng/img_compress/issues)
-- 💬 开启 [Discussion](https://github.com/wangruofeng/img_compress/discussions)
+- 📮 提交 [Issue](https://github.com/wangruofeng/img-compress/issues)
+- 💬 开启 [Discussion](https://github.com/wangruofeng/img-compress/discussions)
 
 ### 📋 Changelog
 
@@ -242,8 +242,8 @@ The preview interface supports comparing original and compressed images by dragg
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/wangruofeng/img_compress.git
-   cd img_compress
+   git clone https://github.com/wangruofeng/img-compress.git
+   cd img-compress
    ```
    
 2. **Install dependencies**
@@ -303,7 +303,7 @@ The preview interface supports comparing original and compressed images by dragg
 ### 📁 Project Structure
 
 ```
-img_compress/
+img-compress/
 ├── components/          # React Components
 │   ├── Dropzone.tsx    # File upload component
 │   ├── Header.tsx      # Page header
@@ -374,8 +374,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you have questions or suggestions, please contact us through:
 
-- 📮 Submit an [Issue](https://github.com/wangruofeng/img_compress/issues)
-- 💬 Start a [Discussion](https://github.com/wangruofeng/img_compress/discussions)
+- 📮 Submit an [Issue](https://github.com/wangruofeng/img-compress/issues)
+- 💬 Start a [Discussion](https://github.com/wangruofeng/img-compress/discussions)
 
 ### 📋 Changelog
 
@@ -425,8 +425,8 @@ For detailed changelog, please see [CHANGELOG.md](CHANGELOG.md).
 
 1. **克隆倉庫**
    ```bash
-   git clone https://github.com/wangruofeng/img_compress.git
-   cd img_compress
+   git clone https://github.com/wangruofeng/img-compress.git
+   cd img-compress
    ```
 
 
@@ -487,7 +487,7 @@ For detailed changelog, please see [CHANGELOG.md](CHANGELOG.md).
 ### 📁 專案結構
 
 ```
-img_compress/
+img-compress/
 ├── components/          # React 元件
 │   ├── Dropzone.tsx    # 檔案上傳元件
 │   ├── Header.tsx      # 頁面標頭
@@ -558,8 +558,8 @@ img_compress/
 
 如有問題或建議，請透過以下方式聯絡：
 
-- 📮 提交 [Issue](https://github.com/wangruofeng/img_compress/issues)
-- 💬 開啟 [Discussion](https://github.com/wangruofeng/img_compress/discussions)
+- 📮 提交 [Issue](https://github.com/wangruofeng/img-compress/issues)
+- 💬 開啟 [Discussion](https://github.com/wangruofeng/img-compress/discussions)
 
 ### 📋 更新日誌
 
@@ -573,8 +573,8 @@ img_compress/
 
 Made with ❤️ by ImgCompress Contributors
 
-<a href="https://github.com/wangruofeng/img_compress/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=wangruofeng/img_compress" alt="Contributors" />
+<a href="https://github.com/wangruofeng/img-compress/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wangruofeng/img-compress" alt="Contributors" />
 </a>
 
 </div>

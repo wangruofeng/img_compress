@@ -31,10 +31,10 @@ npm run preview:gh-pages
 
 The project is configured for automatic deployment to GitHub Pages:
 
-- **Base Path**: `/img_compress/` (configured in `vite.config.ts`)
+- **Base Path**: `/img-compress/` (configured in `vite.config.ts`)
 - **Workflow**: `.github/workflows/deploy.yml`
 - **Auto-deploy**: Pushes to `main` branch trigger automatic deployment
-- **Online Demo**: https://wangruofeng.github.io/img_compress/
+- **Online Demo**: https://wangruofeng.github.io/img-compress/
 
 See [DEPLOY.md](DEPLOY.md) for detailed deployment instructions.
 
@@ -139,7 +139,7 @@ try {
 ### Project Structure
 
 ```
-img_compress/
+img-compress/
 ├── components/          # React components
 ├── contexts/           # React Context providers
 ├── locales/           # i18n translations

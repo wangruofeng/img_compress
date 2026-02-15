@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden md:flex items-center gap-4">
               <a
-                href="https://github.com/wangruofeng/img_compress/blob/main/README.md"
+                href="https://github.com/wangruofeng/img-compress/blob/main/README.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary-dark hover:text-primary-light transition-colors"
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
                 {t('documentation')}
               </a>
               <a
-                href="https://github.com/wangruofeng/img_compress/"
+                href="https://github.com/wangruofeng/img-compress/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary-dark hover:text-primary-light transition-colors"

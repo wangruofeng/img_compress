@@ -1,5 +1,5 @@
 {
-  "name": "img_compress",
+  "name": "img-compress",
   "private": true,
   "version": "1.3.1",
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "preview:gh-pages": "vite preview --base /img_compress/"
+    "preview:gh-pages": "vite preview --base /img-compress/"
   },
   "dependencies": {
     "jszip": "^3.10.1",
