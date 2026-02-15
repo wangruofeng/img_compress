@@ -45,6 +45,7 @@ function AppContent() {
   const [settings, setSettings] = useState<CompressionSettings>(loadSettings);
   const [isProcessingGlobal, setIsProcessingGlobal] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [imageCount, setImageCount] = useState(0);
 
   const handleSettingsChange = (newSettings: CompressionSettings) => {
     setSettings(newSettings);
@@ -109,6 +110,7 @@ function AppContent() {
         processPendingImages(updated, settings);
         return updated;
     });
+    setImageCount(prev => prev + newImages.length);
   };
 
   const processPendingImages = async (allImages: ProcessedImage[], currentSettings: CompressionSettings) => {
@@ -146,7 +148,9 @@ function AppContent() {
             URL.revokeObjectURL(target.originalPreviewUrl);
             if (target.compressedUrl) URL.revokeObjectURL(target.compressedUrl);
         }
-        return prev.filter(img => img.id !== id);
+        const updated = prev.filter(img => img.id !== id);
+        setImageCount(updated.length);
+        return updated;
     });
   };
 
@@ -157,6 +161,7 @@ function AppContent() {
           if (img.compressedUrl) URL.revokeObjectURL(img.compressedUrl);
       });
       setImages([]);
+      setImageCount(0);
       setShowDeleteConfirm(false);
       setIsProcessingGlobal(false);
   };
@@ -252,14 +257,39 @@ function AppContent() {
                     disabled={isProcessingGlobal}
                     stats={(() => {
                         const completedImages = images.filter(img => img.status === 'done' && img.compressedBlob);
+
                         if (completedImages.length === 0) return null;
 
-                        const totalOriginal = completedImages.reduce((sum, img) => sum + img.originalFile.size, 0);
-                        const totalCompressed = completedImages.reduce((sum, img) => sum + (img.compressedBlob?.size || 0), 0);
-                        const savedBytes = totalOriginal - totalCompressed;
-                        const savedPercent = totalOriginal > 0 ? Math.round((savedBytes / totalOriginal) * 100) : 0;
+                        let totalOriginal = 0;
+                        let totalCompressed = 0;
 
-                        return { totalOriginal, totalCompressed, savedBytes, savedPercent };
+                        for (const img of completedImages) {
+                            const originalSize = Number(img.originalFile?.size);
+                            const compressedSize = img.compressedBlob?.size;
+
+                            if (!isNaN(originalSize) && originalSize > 0) {
+                                totalOriginal += originalSize;
+                            }
+                            // Use compressedBlob.size if valid, otherwise calculate from compressionRatio
+                            if (!isNaN(compressedSize) && compressedSize > 0) {
+                                totalCompressed += compressedSize;
+                            } else if (img.compressionRatio > 0 && originalSize > 0) {
+                                // Fallback: calculate compressed size from compressionRatio
+                                totalCompressed += Math.round(originalSize * (1 - img.compressionRatio / 100));
+                            }
+                        }
+
+                        if (totalOriginal === 0) return null;
+
+                        const savedBytes = totalOriginal - totalCompressed;
+                        const savedPercent = Math.round((savedBytes / totalOriginal) * 100);
+
+                        return {
+                            totalOriginal,
+                            totalCompressed,
+                            savedBytes: Math.max(0, savedBytes),
+                            savedPercent: isNaN(savedPercent) ? 0 : Math.max(0, savedPercent)
+                        };
                     })()}
                 />
             </div>
@@ -268,7 +298,7 @@ function AppContent() {
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-300 dark:border-zinc-800">
                     <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-3">
                         <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        {t('queueTitle')} <span className="text-zinc-500">({images.length})</span>
+                        {t('queueTitle')} <span className="text-zinc-500">({imageCount})</span>
                     </h3>
                 </div>
 

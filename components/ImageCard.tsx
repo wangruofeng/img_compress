@@ -63,11 +63,6 @@ const ImageCard: React.FC<ImageCardProps> = ({ image, onRemove, onPreview }) => 
             {t('statusCompressing')}
           </div>
         )}
-        {image.status === 'done' && (
-          <div className="absolute top-3 left-3 px-3 py-1 bg-emerald-500/90 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-            {t('statusDone')}
-          </div>
-        )}
         {image.status === 'error' && (
           <div className="absolute top-3 left-3 px-3 py-1 bg-red-500/90 backdrop-blur-sm rounded-full text-xs font-medium text-white">
             {t('statusFailed')}

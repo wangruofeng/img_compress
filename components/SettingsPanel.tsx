@@ -2,6 +2,7 @@ import React from 'react';
 import { CompressionSettings } from '../types';
 import { SettingsIcon, ArrowRightIcon, CompressIcon } from './Icon';
 import { useLanguage } from '../contexts/LanguageContext';
+import { formatFileSize } from '../utils/helpers';
 
 interface StatsData {
   totalOriginal: number;
@@ -51,14 +52,6 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, onSettingsChang
     if (q >= 0.8) return t('qualityHigh');
     if (q >= 0.5) return t('qualityMed');
     return t('qualityLow');
-  };
-
-  const formatFileSize = (bytes: number): string => {
-    if (bytes === 0) return '0 B';
-    const k = 1024;
-    const sizes = ['B', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
   return (
@@ -175,17 +168,19 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, onSettingsChang
 
         {/* Stats Summary */}
         {stats && (
-          <div className="flex items-center justify-between pt-3 mt-3 border-t border-zinc-200 dark:border-zinc-700/50">
-            <div className="flex items-center gap-3 text-sm">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-3 mt-3 border-t border-zinc-200 dark:border-zinc-700/50">
+            <div className="flex flex-wrap items-center gap-2 text-sm">
               <span className="text-zinc-500 dark:text-zinc-400">{t('originalLabel')}:</span>
               <span className="text-zinc-800 dark:text-white font-medium">{formatFileSize(stats.totalOriginal)}</span>
               <ArrowRightIcon className="w-4 h-4 text-zinc-400" />
               <span className="text-zinc-500 dark:text-zinc-400">{t('compressedLabel')}:</span>
               <span className="text-primary-dark dark:text-primary-light font-medium">{formatFileSize(stats.totalCompressed)}</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
-              <CompressIcon className="w-4 h-4 text-emerald-500" />
-              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">-{stats.savedPercent}%</span>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 px-3 py-2 sm:py-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20 w-full sm:w-auto">
+              <div className="flex items-center gap-2">
+                <CompressIcon className="w-4 h-4 text-emerald-500" />
+                <span className="text-emerald-600 dark:text-emerald-400 font-semibold">-{stats.savedPercent}%</span>
+              </div>
               <span className="text-zinc-500 text-xs">节省 {formatFileSize(stats.savedBytes)}</span>
             </div>
           </div>

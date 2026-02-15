@@ -13,6 +13,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 简体中文
 
+### [1.3.0] - 2026-02-15
+
+#### 🐛 Bug 修复
+- 修复移动端"节省"空间显示 NaN 问题
+- 添加 PNG/WebP 格式的浏览器支持检测和自动降级处理
+- 优化 formatFileSize 函数，处理 undefined/null/NaN 情况
+
+#### 🎨 界面优化
+- 移动端统计信息改为上下布局，更适合窄屏幕显示
+- 移除已完成状态的重复徽章显示
+
+#### 🛠️ 技术改进
+- 统一使用 utils/helpers.ts 中的 formatFileSize 函数
+- 改进压缩器错误处理和降级逻辑
+
+---
+
+### [1.2.0] - 2026-02-10
+
+#### ✨ 新增功能
+- 🎨 **深色/浅色主题切换** - 支持手动切换和系统偏好自动切换
+
+#### 🐛 Bug 修复
+- 使用 JSZip 进行批量下载，避免浏览器下载数量限制
+
+---
+
 ### [1.1.0] - 2026-01-26
 
 #### 🐛 Bug 修复
@@ -45,6 +72,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## English
 
+### [1.3.0] - Feb 15, 2026
+
+#### 🐛 Bug Fixes
+- Fixed "saved space" showing NaN on mobile devices
+- Added browser support detection and fallback for PNG/WebP formats
+- Improved formatFileSize to handle undefined/null/NaN
+
+#### 🎨 UI Improvements
+- Changed stats layout to vertical stack on mobile for better display
+- Removed duplicate "done" status badge
+
+#### 🛠️ Technical Improvements
+- Unified formatFileSize usage from utils/helpers.ts
+- Improved compressor error handling and fallback logic
+
+---
+
+### [1.2.0] - Feb 10, 2026
+
+#### ✨ New Features
+- 🎨 **Dark/Light Theme Toggle** - Support manual toggle and system preference
+
+#### 🐛 Bug Fixes
+- Use JSZip for batch download to avoid browser download limits
+
+---
+
 ### [1.1.0] - Jan 26, 2026
 
 #### 🐛 Bug Fixes
@@ -76,6 +130,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## 繁體中文
+
+### [1.3.0] - 2026-02-15
+
+#### 🐛 Bug 修復
+- 修復行動端「節省」空間顯示 NaN 問題
+- 添加 PNG/WebP 格式的瀏覽器支援檢測和自動降級處理
+- 優化 formatFileSize 函數，處理 undefined/null/NaN 情況
+
+#### 🎨 介面優化
+- 行動端統計資訊改為上下佈局，更適合窄螢幕顯示
+- 移除已完成狀態的重複徽章顯示
+
+#### 🛠️ 技術改進
+- 統一使用 utils/helpers.ts 中的 formatFileSize 函數
+- 改進壓縮器錯誤處理和降級邏輯
+
+---
+
+### [1.2.0] - 2026-02-10
+
+#### ✨ 新增功能
+- 🎨 **深色/淺色主題切換** - 支援手動切換和系統偏好自動切換
+
+#### 🐛 Bug 修復
+- 使用 JSZip 進行批次下載，避免瀏覽器下載數量限制
+
+---
 
 ### [1.1.0] - 2026-01-26
 
